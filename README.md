@@ -100,6 +100,8 @@ gcloud beta emulators pubsub start --project=my-local-project --host-port=localh
 
 ## Pull 型
 
+※ Pub/Sub の emulator が起動されている前提
+
 1. トピックとサブスクリプションの作成
 
 ```
