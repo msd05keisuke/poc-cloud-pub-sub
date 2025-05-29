@@ -49,6 +49,8 @@ graph TD;
 
 ## Python
 
+### パッケージ管理
+
 Python は uv を使って環境構築を行います。
 
 uv のインストール（初回のみ）
@@ -81,6 +83,47 @@ pyproject.toml に記載のパッケージを追加
 
 ```
 uv sync
+```
+
+### Linter/Formatter
+
+Linter/Formatter は ruff を使います。
+
+バージョン
+
+```
+> uv run ruff --version
+ruff 0.11.12
+```
+
+違反を検出
+
+```
+uv run ruff check .
+```
+
+違反を検出し、修正まで行う
+
+```
+uv run ruff check . --fix
+```
+
+VScode の拡張機能も設定します。
+
+拡張機能
+https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff
+
+setting.json
+
+```
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit", // 保存時にRuffの修正をすべて適用
+            "source.organizeImports.ruff": "explicit" // 保存時にRuffでimport文を整理 (明示的に設定する場合)
+        }
+    },
 ```
 
 ## Pub/Sub emulator
