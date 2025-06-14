@@ -113,7 +113,7 @@ VScode の拡張機能も設定します。
 拡張機能
 https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff
 
-setting.json
+.vscode/settings.json
 
 ```
     "[python]": {
